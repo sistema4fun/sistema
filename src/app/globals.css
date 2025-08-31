@@ -1,5 +1,15 @@
+/* === Registro da fonte custom === */
+@font-face {
+  font-family: 'minhafont'; /* apelido usado no Tailwind */
+  src: url('/fonts/minhafont.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* === Tailwind base === */
 @import "tailwindcss";
 
+/* === Variáveis de tema === */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,6 +22,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* === Dark mode === */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +30,14 @@
   }
 }
 
+/* === Estilo global do body === */
 body {
-  background: var(--background);
+  background-image: url("/fundo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'minhafont', sans-serif; /* ✅ usa sua fonte global */
 }
